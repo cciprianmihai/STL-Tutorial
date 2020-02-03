@@ -48,7 +48,7 @@ class shape {
 		}
 		// Virtual = function can be overwritten in a derived class 
 		virtual void DrawShape () {}
-		// Overload operator<<
+		// Overload operator<< (friend means that we have access to private members of class)
 		friend ostream& operator<< (ostream& os, const shape& s);
 };
 
