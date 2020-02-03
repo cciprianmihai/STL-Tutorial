@@ -1,4 +1,4 @@
-// 2.1 section - Classes
+// 2.3 section - Templates
 
 #include <iostream>
 #include <ostream>
@@ -59,23 +59,50 @@ ostream& operator<< (ostream& os, const shape& s) {
 	return os;
 }
 
-int main(){
-	// Call default constructor
-	shape shape1;
-	cout<<shape1;
+// Swap integers
+void swap_elements(int& a, int& b){
+	int temp = a;
+	a = b;
+	b = temp;
+}
+
+// Swap Templates or Parametrized types
+template <class T> void swap_elements (T& a, T& b) {   
+	T temp = a;   
+	a = b;   
+	b = temp;
+}
+
+// Function template examples
+template <class T>T& min (T& a, T&b) { 
+	return a < b ? a : b; 
+}
+template <class T>void print_to_cout (char* msg, T& obj) {   
+	cout << msg << ": " << obj << endl;
+}
+
+int main(){	
+	// Swap integers
+	int a = 5, b = 6;
+	cout<<"Before: a="<<a<<" b="<<b<<"\n";
+	swap_elements(a, b);
+	cout<<"After: a="<<a<<" b="<<b<<"\n";
 	
-	// Call constructor with parameters
-	shape shape2(1, 2, 3);
-	cout<<shape2;
+	// Swap Templates or Parametrized types 
+	shape shape1(1, 2, 3);
+	shape shape2(4, 5, 6);
+	cout<<"Before: shape1="<<shape1<<" shape2="<<shape2<<"\n";
+	swap_elements(shape1, shape2);
+	cout<<"After: shape1="<<shape1<<" shape2="<<shape2<<"\n";
 	
-	// Call constructor with shape object parameter - copy constructor
-	shape shape3(shape2);
-	cout<<shape3;
+	// Function template examples - we need < to be implemented
+	// shape minimum = min(shape1, shape2);
+	// cout<<"Min: "<<minimum<<"\n";
+	int minimum = min(a, b);
+	cout<<"Min: "<<minimum<<"\n";
 	
-	// Copy operator
-	shape shape4 = shape2;
-	cout<<shape4;
-	
+	char *msg = "Shape object to print";
+	print_to_cout(msg, shape1);
 	return 0;
 }	
 
