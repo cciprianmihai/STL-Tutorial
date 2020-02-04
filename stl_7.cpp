@@ -1,6 +1,7 @@
 // 4.1.2 section - Exercises Vector
 
-//Exercise 1: Write a STL program that declares a vector of integer values, stores five arbitrary values in the vector and then prints the single vector elements to cout. 
+// Exercise 1: Write a STL program that declares a vector of integer values, 
+// stores five arbitrary values in the vector and then prints the single vector elements to cout. 
 
 #include <vector>
 #include <iostream>
