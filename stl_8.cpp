@@ -61,7 +61,7 @@ int main ()
 		// go to the next list element			
 		first++;                        
 		if (count_1 == 5) {
-            // insert a 0 after the fifth consecutive 1
+			// insert a 0 after the fifth consecutive 1
 			bit_stuffed_seq.insert (first, 0);
 			// reset counter
 			count_1 = 0;				
