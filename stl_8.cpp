@@ -63,7 +63,8 @@ int main ()
 		if (count_1 == 5) {
             // insert a 0 after the fifth consecutive 1
 			bit_stuffed_seq.insert (first, 0);
-			count_1 = 0;				// reset counter
+			// reset counter
+			count_1 = 0;				
 		}
 	}
 	
