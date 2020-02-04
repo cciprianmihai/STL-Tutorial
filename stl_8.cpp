@@ -1,6 +1,6 @@
 // 4.1.2 section - Exercises Vector
 
-// Exercise 2: Write a STL program that takes an arbitrary sequence of binary digits 
+// Exercise 2 & 3: Write a STL program that takes an arbitrary sequence of binary digits 
 // (integer values 0 and 1) from cin and stores them into a container. When receiving 
 // a value different from 0 or 1 from cin stop reading. Now, you should have a 
 // container storing a sequence of 0's and 1's. After finishing the read-process, apply 
@@ -17,6 +17,7 @@
 // to get the appropriate binary value. Note that an element is always inserted before 
 // a specified iterator-position and that this insertion doesn't affect all the other iterators 
 // defined when using a list. 
+// Print the results.
 
 #include <vector>
 #include <list>
