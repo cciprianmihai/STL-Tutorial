@@ -11,3 +11,7 @@ g++ script_name.cpp -o script_name
 
 ![1](images/1.png)
 ![2](images/2.png)
+
+The following table shows the <b>insert</b> and <b>erase</b> overheads of the containers <b>vector</b>, <b>list</b> and <b>deque</b>. Think of these overheads when choosing a container for solving a specific task.
+
+![3](images/3.png)
