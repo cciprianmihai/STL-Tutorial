@@ -22,6 +22,13 @@
 // expansion is the expasion measured in bits (e.g. the bit-stuffed sequence has 
 // increased by 5 bits), the relative expansion is the percentage of the expansion 
 // (e.g. the relative expansion between the "new" and "old" sequence is 5.12%). 
+// Exercise 5: write the inverse algorithm to the one in Exercise 4.1.2 that the 
+// receiver has to perform to get the initial binary data representation. After the 
+// bit-stuffing and bit-unstuffing compare your list with the original one using the 
+// equality operator==. If the lists are equal, you did a fine job. Note: It is advisable 
+// to include a plausibility test in your unstuff algorithm. After a sequence of five 
+// consecutive ones there must be a zero, otherwise something went wrong in 
+// the stuffing algorithm. 
 
 #include <vector>
 #include <list>
@@ -77,7 +84,7 @@ int main ()
 	// Exercise 3
 	// reset loop iterators in order to print the new list
 	first = bit_stuffed_seq.begin();
-	last  = bit_stuffed_seq.end();
+	last = bit_stuffed_seq.end();
 	
 	while (first != last) {
 		cout << *first++ << " ";
@@ -92,4 +99,33 @@ int main ()
 	
 	cout << "\nAbsolute expansion: " << (bit_stuffed_seq.size() - bit_seq.size()) << " bit";
 	cout << "\nRelative expansion: " << rel_exp << "%";
+	
+	// Exercise 5
+	list<int> bit_unstuffed_seq (bit_seq);
+	// reset loop iterators in order to print the new list
+	first = bit_stuffed_seq.begin();
+	last  = bit_stuffed_seq.end();
+	
+	count_1 = 0;
+	
+	while (first != last) {
+		if (*first == 0)
+			count_1 = 0;
+		else
+			count_1++;
+		
+		if(count_1 != 5)
+			bit_unstuffed_seq.insert(first, *first);
+		++first;
+	}
+	
+	first = bit_unstuffed_seq.begin();
+	last  = bit_unstuffed_seq.end();
+	
+	cout << "\nInitial list: ";
+	while (first != last) {
+		cout << *first++ << " ";
+	}
+	
+	cout << endl;
 }
