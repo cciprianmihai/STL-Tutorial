@@ -1,6 +1,6 @@
 // 4.1.2 section - Exercises Vector
 
-// Exercise 2 & 3: Write a STL program that takes an arbitrary sequence of binary digits 
+// Exercise 2: Write a STL program that takes an arbitrary sequence of binary digits 
 // (integer values 0 and 1) from cin and stores them into a container. When receiving 
 // a value different from 0 or 1 from cin stop reading. Now, you should have a 
 // container storing a sequence of 0's and 1's. After finishing the read-process, apply 
@@ -17,7 +17,11 @@
 // to get the appropriate binary value. Note that an element is always inserted before 
 // a specified iterator-position and that this insertion doesn't affect all the other iterators 
 // defined when using a list. 
-// Print the results.
+// Exercise 3: Print the results.
+// Exercise 4: Print absolute and relative expansion of the bit sequence. The absolute 
+// expansion is the expasion measured in bits (e.g. the bit-stuffed sequence has 
+// increased by 5 bits), the relative expansion is the percentage of the expansion 
+// (e.g. the relative expansion between the "new" and "old" sequence is 5.12%). 
 
 #include <vector>
 #include <list>
@@ -27,6 +31,7 @@ using namespace std;
 
 int main ()
 {
+	// Exercise 2
 	// define a list of int
 	list<int> bit_seq;    
 	// value read from cin	
@@ -69,6 +74,7 @@ int main ()
 		}
 	}
 	
+	// Exercise 3
 	// reset loop iterators in order to print the new list
 	first = bit_stuffed_seq.begin();
 	last  = bit_stuffed_seq.end();
@@ -76,4 +82,14 @@ int main ()
 	while (first != last) {
 		cout << *first++ << " ";
 	}
+	
+	// Exercise 4
+	// relative expansion (in percent)
+	double rel_exp;               
+	rel_exp = (double) bit_stuffed_seq.size() / bit_seq.size();
+	rel_exp = (rel_exp - 1) * 100;
+	cout.precision (4);
+	
+	cout << "\nAbsolute expansion: " << (bit_stuffed_seq.size() - bit_seq.size()) << " bit";
+	cout << "\nRelative expansion: " << rel_exp << "%";
 }
