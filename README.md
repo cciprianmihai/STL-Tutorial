@@ -23,3 +23,7 @@ For `stl_6.cpp` script, `v.begin()` returns an iterator to the first element in 
 There are five categories of iterators. Iterators differ in the operations defined on them. Each iterator is designed to <i>satisfy</i> a well-defined set of requirements. These requirements define what operations can be applied to the iterator. According to these requirements the iterators can be assigned to the five categories. Iterator categories can be arranged from left to right to express that the iterator category on the left satisfies the requirements of all the iterator categories on the right (and so could be called more powerful).
 
 ![5](images/5.png)
+
+The following table shows the iterators that can be used with the containers `vector`, `list` and `deque` (of course all iterators that satisfy the requirements of the listed iterators can be used as well):
+
+![6](images/6.png)
