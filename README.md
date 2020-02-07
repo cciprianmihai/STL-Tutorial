@@ -27,3 +27,5 @@ There are five categories of iterators. Iterators differ in the operations defin
 The following table shows the iterators that can be used with the containers `vector`, `list` and `deque` (of course all iterators that satisfy the requirements of the listed iterators can be used as well):
 
 ![6](images/6.png)
+
+All the algorithms provided by the library are parametrized by iterator types and are so seperated from particular implementations of data structures. Because of that they are called <i>generic algorithms</i>.
