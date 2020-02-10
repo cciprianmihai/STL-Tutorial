@@ -29,3 +29,7 @@ The following table shows the iterators that can be used with the containers `ve
 ![6](images/6.png)
 
 All the algorithms provided by the library are parametrized by iterator types and are so seperated from particular implementations of data structures. Because of that they are called <i>generic algorithms</i>.
+
+The algorithms delivered with the library are divided into four groups:
+
+![7](images/7.png)
